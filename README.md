@@ -1,67 +1,81 @@
+# 🌍 **ADVANCE IP Information Gathering Tool**  
 
-
-# 🔍 ADVANCE IP Information Gathering Tool  
-
-![GitHub repo size](https://img.shields.io/github/repo-size/hackerattack99/IP-Info-Tool?style=flat-square)  
-![GitHub contributors](https://img.shields.io/github/contributors/hackerattack99/IP-Info-Tool?color=blue&style=flat-square)  
-![GitHub last commit](https://img.shields.io/github/last-commit/hackerattack99/IP-Info-Tool?style=flat-square)  
-![GitHub license](https://img.shields.io/github/license/hackerattack99/IP-Info-Tool?style=flat-square)  
-
----
-
-## 🚀 Overview  
-
-The **IP Information Gathering Tool** is a powerful and efficient script that retrieves **geolocation, WHOIS details, DNS records, and traceroute results** for a given IP address. It provides **formatted, colorized output** for better readability using `Rich` and `Colorama`.  
-
-🔹 **Accurate & Reliable** – Uses trusted APIs for IP lookups  
-🔹 **Fast Execution** – Optimized for quick information retrieval  
-🔹 **User-Friendly** – Well-formatted, easy-to-read output  
+![GitHub repo size](https://img.shields.io/github/repo-size/hackerattack99/IP-Info-Tool?style=for-the-badge&color=blue)  
+![GitHub last commit](https://img.shields.io/github/last-commit/hackerattack99/IP-Info-Tool?style=for-the-badge&color=green)  
+![GitHub license](https://img.shields.io/github/license/hackerattack99/IP-Info-Tool?style=for-the-badge&color=red)  
+![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge)  
+![Version](https://img.shields.io/badge/Version-1.02-purple?style=for-the-badge)  
 
 ---
 
-## 🎯 Features  
+## 🚀 **Overview**  
 
-✅ **Fetches IP information** (Hostname, ISP, City, Country, Region, etc.)  
-✅ **Generates Google Maps link** for IP geolocation  
-✅ **Uses `Rich` for enhanced output formatting**  
-✅ **Validates IP & handles errors gracefully**  
-✅ **Lightweight and easy to use**  
+The **IP Information Gathering Tool** is a **fast, lightweight, and efficient** Python script that retrieves **detailed information about an IP address**, including:  
+
+✔️ **Geolocation (City, Country, Region, ISP, Timezone, etc.)**  
+✔️ **Hostname and Network Provider**  
+✔️ **Google Maps link for precise location**  
+✔️ **Formatted & colorized output for readability**  
+✔️ **Error handling for invalid input and connection issues**  
+
+🛠️ **Built with:** `Rich`, `Colorama`, and `Requests` for a visually appealing command-line experience.  
 
 ---
 
-## 📦 Installation  
+## 🔥 **Features**  
 
-### 1️⃣ Clone the Repository  
+✅ **Accurate & Reliable** – Fetches data from trusted APIs.  
+✅ **User-Friendly Output** – Uses `Rich` tables for structured display.  
+✅ **Fast Execution** – Optimized for quick information retrieval.  
+✅ **Google Maps Link** – Easily visualize the IP location.  
+✅ **Supports Direct IP & Domain Resolution** – Convert domains to IP addresses.  
+✅ **Error Handling** – Detects invalid input & network issues gracefully.  
+
+---
+
+## 📦 **Installation**  
+
+### 🔹 **Step 1: Clone the Repository**  
 ```bash
 git clone https://github.com/hackerattack99/IP-Info-Tool.git
 cd IP-Info-Tool
 ```
 
-### 2️⃣ Install Dependencies  
+### 🔹 **Step 2: Install Required Dependencies**  
 ```bash
 pip install -r requirements.txt
 ```
 
 ---
 
-## 🚀 Usage  
+## 🎯 **Usage**  
 
-### 🔹 Run the script interactively:  
+### 🔹 **Run the script interactively:**  
 ```bash
 python ip_info.py
 ```
 
-### 🔹 Pass an IP address as an argument:  
+### 🔹 **Fetch IP details directly via command-line argument:**  
 ```bash
 python ip_info.py 8.8.8.8
 ```
 
+### 🔹 **Resolve a domain to its IP and get details:**  
+```bash
+python ip_info.py example.com
+```
+
 ---
 
-## 📌 Example Output  
+## 📌 **Example Output**  
 
 ```
-🔍 Gathering information for IP: 8.8.8.8  
+=============================================
+       Hacker.Tools.Kail - IP Information
+         Version: 1.02 | Owner: hackerattack99
+=============================================
+
+[*] Fetching IP info for: 8.8.8.8
 
 📡 Hostname:  
     dns.google  
@@ -75,19 +89,28 @@ python ip_info.py 8.8.8.8
 
 🗺️ Google Maps Link:  
     https://www.google.com/maps?q=37.386,-122.084  
+
+[*] IP info retrieval completed.
 ```
 
 ---
 
-## ⚠️ Disclaimer  
+## ⚠️ **Disclaimer**  
 
-> 🚨 **This tool is for educational purposes only.** Unauthorized use may be illegal. Use responsibly! The author is not responsible for any misuse of this tool.  
+> 🚨 **This tool is for educational and ethical use only.** Unauthorized use may be illegal.  
+> The author (**hackerattack99**) is **not responsible** for any misuse of this tool. Use responsibly!  
 
 ---
 
-## 👨‍💻 Author  
+## 🤝 **Contributions & Issues**  
 
-Developed by **hackerattack99**  
+💡 Found a bug? Want to add new features? Feel free to **open an issue** or **submit a pull request**!  
+
+---
+
+## 👨‍💻 **Author**  
+
+👤 Developed by **hackerattack99**  
 🔗 GitHub: [hackerattack99](https://github.com/hackerattack99)  
 
 ---
