@@ -1,31 +1,35 @@
 import os
 import sys
 import requests
+import socket
 from rich.console import Console
 from rich.table import Table
 from colorama import Fore, init, Style
 
-# Import default timeout from settings
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from config.settings import DEFAULT_TIMEOUT  
+# Set a timeout value (Fix for NameError)
+DEFAULT_TIMEOUT = 5  # Timeout in seconds
 
-# Initialize console output
 init(autoreset=True)
 console = Console()
-
-# Version & Owner
-VERSION = "1.02"
-OWNER = "hackerattack99"
 
 def banner():
     console.print(f"""
 {Fore.GREEN}=============================================
           Hacker.Tools.Kail - IP Information
-             Version: {VERSION} | Owner: {OWNER}
+             Version: 1.02 | Owner: hackerattack99
 ============================================={Style.RESET_ALL}
 """)
 
+def resolve_domain(domain):
+    """Converts a domain name to its corresponding IP address."""
+    try:
+        return socket.gethostbyname(domain)
+    except socket.gaierror:
+        console.print(f"{Fore.RED}[!] Error: Unable to resolve domain {domain}.{Style.RESET_ALL}")
+        sys.exit(1)
+
 def get_ip_info(ip):
+    """Fetches IP information from ip-api.com"""
     try:
         response = requests.get(f"http://ip-api.com/json/{ip}", timeout=DEFAULT_TIMEOUT)
         data = response.json()
@@ -43,15 +47,16 @@ def get_ip_info(ip):
         return None
 
 def display_ip_info(ip_info):
-    table = Table(show_header=True, header_style="bold white")
-    table.add_column("Key", style="white", justify="left", min_width=15)
-    table.add_column("Value", style="white", justify="left", min_width=50)
+    """Displays IP information in a formatted table."""
+    table = Table(show_header=True, header_style="bold cyan")
+    table.add_column("Key", style="bold white", justify="left", min_width=15)
+    table.add_column("Value", style="bold yellow", justify="left", min_width=50)
 
     for key, value in ip_info.items():
         table.add_row(str(key), str(value))
 
     console.print(table)
-    
+
     if 'map_link' in ip_info:
         console.print(f"\n{Fore.YELLOW}[+] View location on map: {ip_info['map_link']}{Style.RESET_ALL}")
 
@@ -59,9 +64,11 @@ def main(target):
     banner()
     console.print(f"{Fore.WHITE}[*] Fetching IP info for: {target}{Style.RESET_ALL}")
 
-    ip = target  
+    # Convert domain to IP if needed
+    if not target.replace('.', '').isdigit():  
+        target = resolve_domain(target)
 
-    ip_info = get_ip_info(ip)
+    ip_info = get_ip_info(target)
 
     if ip_info:
         display_ip_info(ip_info)
